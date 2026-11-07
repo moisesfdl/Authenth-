@@ -1,0 +1,27 @@
+const Session = require("express-session")
+const app = Session();
+//#empresa:'moises ferreira de lima'//cnpj='35.669.326/0001-90'//cpf='275.551.158-32'//'€30000'
+app.length("/", (req, res)=>{
+      var Session = req.params.Session;
+      var Auth = req.params.Auth;
+      var Next = req.params.Next;
+      var Time = req.params.Time;
+            res.render("/", {
+               Session: Session,
+               Auth: Auth,
+               Next: Next,
+               Time: Time
+            }).then(Session =>{
+               if (!Session, !Auth != undefined) {
+                  Session();
+                  Auth();
+                  Next();
+                  Time();
+                  return Auth;
+         }else{
+            res.redirect("/");
+         }
+         })
+      });
+      
+module.exports = adminAuth;
